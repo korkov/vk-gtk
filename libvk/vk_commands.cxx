@@ -145,5 +145,13 @@ namespace vk
     {
       return VK_STR("http://vk.com/im?sel="<<uid);
     }
+
+    bool check_token(const std::string& token)
+    {
+      session_t ses;
+      ses.set_token(token);
+      const std::string content = ses.cmd("messages.get?count=1");
+      return (parse_messages(content).size() == 1);
+    }
   }
 }

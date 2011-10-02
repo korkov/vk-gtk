@@ -1,13 +1,24 @@
 #include "auth.hxx"
 
+#include <fstream>
 #include <gtk/gtk.h>
 #include <webkit/webkit.h>
 
 #include "vk_app.hxx"
 #include "vk_session.hxx"
+#include "vk_commands.hxx"
 #include "vk_common.hxx"
+#include "utils.hxx"
 
 using vk::auth_t;
+
+namespace
+{
+  std::string token_file()
+  {
+    return vk::utils::get_app_dir() + "/token";
+  }
+}
 
 struct auth_t::impl
 {
@@ -27,6 +38,22 @@ struct auth_t::impl
 
   void login(bool on)
   {
+    if (on)
+      {
+        std::ifstream fin(token_file().c_str());
+        std::string token;
+        fin >> token;
+        if (commands::check_token(token))
+          {
+            authorized_sig(token);
+            return;
+          }
+      }
+    else
+      {
+        ::unlink(token_file().c_str());
+      }
+
     const std::string url = on ? m_app.get_url() : "http://api.vk.com/oauth/logout?client_id=2475380";
     webkit_web_view_open((WebKitWebView*)m_webkit, url.c_str());
   }
@@ -48,6 +75,11 @@ private:
     if (!token.empty())
       {
         gtk_widget_hide(m_window);
+
+        std::ofstream fout(token_file().c_str());
+        fout << token;
+        fout.close();
+
         authorized_sig(token);
       }
     else if (std::string(url).find("success=1") != std::string::npos)

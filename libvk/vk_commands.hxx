@@ -38,6 +38,7 @@ namespace vk
     void mark_as_read(const session_t& ses, const message_t& mess);
     profile_t get_profile(const session_t& ses, unsigned uid);
     std::string get_char_page_url(unsigned uid);
+    bool check_token(const std::string& token);
   }
 }
 
