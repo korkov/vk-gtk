@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vk-gtk 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-02 20:11+0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../data/vk-gtk.glade:260
+msgid "Authorize"
+msgstr "Авторизоваться"
+
+#: ../libvk/vk_common.hxx:27
+msgid "ERROR"
+msgstr "Ошибка"
+
+#: ../data/vk-gtk.glade:280
+msgid "Exit"
+msgstr "Выход"
+
+#: ../gui/notifier.cxx:64
+msgid "Message from"
+msgstr "Сообщение от"
+
+#: ../gui/notifier.cxx:64
+msgid "New message from"
+msgstr "Новое сообщение от"
+
+#: ../data/vk-gtk.glade:268
+msgid "Settings"
+msgstr "Настройки"
+
+#: ../gui/auth.cxx:19
+msgid "VK Gtk"
+msgstr "VK Gtk"
+
+#: ../data/vk-gtk.glade:6
+msgid "VK settings"
+msgstr "VK настройки"
+
+#: ../gui/browsers.cxx:39
+msgid "cannot exec"
+msgstr "не удаётся всыполнить"
+
+#: ../gui/browsers.cxx:142
+msgid "cannot find"
+msgstr "не удаётся найти"
+
+#: ../gui/widgets.cxx:20
+msgid "cannot find widget"
+msgstr "не удаётся найти виджет"
+
+#: ../gui/notifier.cxx:61
+msgid "cannot get profile for uid"
+msgstr "не удаётся получить профиль для uid"
+
+#: ../gui/widgets.cxx:13
+msgid "cannot load builder file"
+msgstr "не удаётся загрузить билдер из файла "
+
+#: ../gui/main.cxx:62 ../gui/notifier.cxx:29 ../gui/main.cxx:64
+msgid "cannot make directory"
+msgstr "не удаётся создать каталог"
+
+#: ../gui/browsers.cxx:101
+msgid "cannot read"
+msgstr "не удаётся прочитать"
+
+#: ../gui/browsers.cxx:83
+msgid "cannot read link"
+msgstr "не удаётся прочитать ссылку"
+
+#: ../gui/notifier.cxx:36
+msgid "cannot write file"
+msgstr "не удаётся записать файл"
+
+#: ../libvk/vk_common.hxx:27
+msgid "failed"
+msgstr "ошибка"

@@ -1,0 +1,12 @@
+*.deb
+*~
+/CMakeCache.txt
+/CPackConfig.cmake
+/CPackSourceConfig.cmake
+/CTestTestfile.cmake
+/Makefile
+/_CPack_Packages
+/install_manifest.txt
+/vk-gtk
+CMakeFiles
+cmake_install.cmake
