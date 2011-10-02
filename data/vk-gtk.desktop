@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=VK Gtk
+GenericName=VK.com notifications
+Comment=vk-gtk is notifications for vk.com (vkontakte.ru).
+Icon=vk-desktop.png
+Exec=vk-gtk
+Terminal=false
+Categories=Network;
+
+# Translations
+GenericName[ru]=Уведомляния VK.com
