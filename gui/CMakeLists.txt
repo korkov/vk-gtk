@@ -1,15 +1,16 @@
 add_executable(vk-gtk main.cxx widgets.cxx settings_window.cxx
-tray.cxx tray_popup.cxx auth.cxx notifier.cxx utils.cxx messages_checker.cxx browsers.cxx)
+tray.cxx tray_popup.cxx auth.cxx notifier.cxx utils.cxx
+messages_checker.cxx browsers.cxx gst_sound.cxx)
 
 #find_package(GTK2 2.10 REQUIRED gtk glade)
 #include_directories(${GTK2_INCLUDE_DIRS})
 
 execute_process(
-  COMMAND "pkg-config" "--cflags" "webkit-1.0" "gtk+-2.0" "libglade-2.0"
+  COMMAND "pkg-config" "--cflags" "webkit-1.0" "gtk+-2.0" "libglade-2.0" "gstreamer-0.10"
   OUTPUT_VARIABLE PKG_CONFIG_INCLUDE_DIRS
   )
 execute_process(
-  COMMAND "pkg-config" "--libs" "webkit-1.0" "gtk+-2.0" "libglade-2.0"
+  COMMAND "pkg-config" "--libs" "webkit-1.0" "gtk+-2.0" "libglade-2.0" "gstreamer-0.10"
   OUTPUT_VARIABLE PKG_CONFIG_LIBRARIES_
   )
 string(REGEX REPLACE "^[:blank:]*(.+)  \n" "\\1" PKG_CONFIG_LIBRARIES "${PKG_CONFIG_LIBRARIES_}")

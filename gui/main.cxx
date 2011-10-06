@@ -5,6 +5,7 @@
 
 #include "vk_common.hxx"
 
+#include "gst_sound.hxx"
 #include "auth.hxx"
 #include "notifier.hxx"
 #include "messages_checker.hxx"
@@ -73,9 +74,12 @@ int main(int argc, char **argv)
       session_t session;
       notifier_t notifier(session);
 
+      gst_sound_t sound;
+
       messages_checker_t checker(session);
       checker.set_timeout(5);
       checker.received_sig.connect(boost::bind(&notifier_t::show, &notifier, _1));
+      checker.received_sig.connect(boost::bind(&gst_sound_t::play_file, &sound, PKGDATA"/bb2.ogg"));
       checker.have_unread_sig.connect(boost::bind(set_tray_message_icon, &tray, _1));
 
       session.activated_sig.connect(boost::bind(auth_changed, &tray, _1));
